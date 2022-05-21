@@ -745,6 +745,65 @@
           </div>
         </footer></div>
         
+             <script>
+      
+          // Change style of navbar on scroll
+          window.onscroll = function() {myFunction()};
+          function myFunction() {
+              var navbar = document.getElementById("myNavbar");
+              if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                  navbar.className = "bar" + " card" + " animate-top" + " white";
+              } else {
+                  navbar.className = navbar.className.replace(" card animate-top white", "");
+              }
+          }
+                 
+                // Used to toggle the menu on small screens when clicking on the menu button
+                function toggleFunction() {
+                  var x = document.getElementById("navDemo");
+                  if (x.className.indexOf("show") == -1) {
+                    x.className += " show";
+                  } else {
+                    x.className = x.className.replace(" show", "");
+                  }
+                }
+          
+                var employlistholder= document.querySelector(".employlist");
+          var  addEmployModal=document.querySelector("#employmodel1");
+          addEmployModal.style.display="none";
+          function addEmployee()
+          {
+            var title=document.querySelector("#title").value;
+             
+                var date=document.querySelector("#date").value;
+                  var review=document.querySelector("#review").value;
+                    var mail=document.querySelector("#mail").value;
+          
+                    var newItem=
+                    `<ul>
+                   <div class="employee-card">
+                            
+                            <div class="employment" id="employ1">
+          
+                              <span class="name">`+title+`</span>
+                               
+                              <br>
+                              <span>`+date+`</span>
+                              <br>
+                              <span class="review">`+review+`</span>
+                              <br>
+                              <span>`+mail+`</span>
+                            </div>
+                           </span>
+                          </div>
+                        </ul>
+                         `;
+          
+                    employlistholder.insertAdjacentHTML('beforeend',newItem);
+                    addEmployModal.style.display="block";
+          }
+           
+              </script>
 
     
     </div>
